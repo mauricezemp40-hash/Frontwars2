@@ -64,3 +64,19 @@ ist nicht enthalten; der vorhandene Express-Ratelimiter bleibt aktiv.
 
 Vercel wurde durch Produktionsbuild und lokale Ausführung des Gateways geprüft,
 nicht durch eine Veröffentlichung im persönlichen Vercel-Konto.
+
+## Korrektur des ersten Vercel-Builds
+
+Das Vercel-Protokoll für Commit `8974b68` zeigte eine fehlende
+`src/client/data/countries.json`. Eine zu breite Git-Ignore-Regel `data/`
+hatte neben lokalen Replaydaten auch diese benötigte Quelldatei ausgeschlossen.
+Die Regel ist auf `/data/` im Projektstamm begrenzt, die Länderdatei wird
+versioniert. Der Quellcode-Export schließt ebenfalls nur Replaydaten im
+Projektstamm aus und enthält die benötigten Clientdaten.
+
+Gegenprüfung: Mit `git checkout-index` wurde ein separater Projektstand allein
+aus den zu versionierenden Dateien erstellt. Nur `node_modules` wurde als
+bereits installierter Abhängigkeitsordner eingebunden. `VERCEL=1 npm run build`
+inklusive TypeScript-Prüfung und Quellcode-Export sowie alle sechs
+Node-Integrationstests waren erfolgreich. Die Länderdatei ist im erzeugten ZIP
+enthalten; lokale Replaydaten sind ausgeschlossen.

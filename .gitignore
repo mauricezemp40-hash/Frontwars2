@@ -11,7 +11,7 @@ resources/.DS_Store
 .clinic/
 CLAUDE.md
 
-data/
+/data/
 artifacts/
 *.log
 static-vercel/
