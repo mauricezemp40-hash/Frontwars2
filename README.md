@@ -32,13 +32,23 @@ mit demselben echten Spielserver und vergleicht dessen Simulationshashes.
 
 ## Vercel
 
-1. Diesen vollständigen Projektstand in dein GitHub-Repository übernehmen.
-2. In Vercel das Repository importieren. Framework **Other**, Node.js **24.x**.
+Der vollständige Projektstand liegt auf
+[GitHub](https://github.com/mauricezemp40-hash/Frontwars2).
+
+1. [Projekt in Vercel öffnen](https://vercel.com/new/import?s=https%3A%2F%2Fgithub.com%2Fmauricezemp40-hash%2FFrontwars2), anmelden und den Repositoryzugriff erlauben.
+2. Framework **Other**, Node.js **24.x** verwenden.
 3. `vercel.json` übernimmt Installation, Build, Ausgabeordner `static` und API-Routen.
-4. Deployen. Ohne weitere Einstellungen funktioniert **Einzelspieler**.
+4. **Deploy** drücken. Ohne weitere Einstellungen funktioniert **Einzelspieler**.
 
 Vercel vergibt beim Deploy eine eigene HTTPS-Adresse. Eine solche öffentliche
 Adresse wurde in dieser Arbeitsumgebung noch nicht erstellt oder geprüft.
+Der direkte Deploymentversuch ist am 20.10.2026 durch HTTP 403 des
+Cloud-Netzwerkproxys für `api.vercel.com` und `vercel.com` blockiert; eine
+Vercel-Anmeldung ist hier ebenfalls nicht vorhanden. Die benötigten Domains
+und die geheime Variable `VERCEL_TOKEN` sind im Cloud-Konfigurationsentwurf
+vorgemerkt. Für einen späteren Deploymentlauf durch den Agenten müssen diese
+Netzwerkfreigaben aktiv und der Token sicher in den Umgebungseinstellungen
+hinterlegt sein. Keine Tokens oder Passwörter in Chat oder Repository schreiben.
 
 Für **Onlinepartien** zusätzlich den enthaltenen Node-/Docker-Server auf einem
 Host mit dauerhaften WebSocket-Verbindungen betreiben. In Vercel dann die öffentliche

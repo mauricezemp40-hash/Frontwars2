@@ -4,7 +4,7 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 
 root = Path(__file__).resolve().parents[1]
-excluded = {".git", "node_modules", "static", "static-vercel", "out", "build", "coverage", "data", "artifacts", ".husky", ".vscode", "__pycache__"}
+excluded = {".git", ".vercel", "node_modules", "static", "static-vercel", "out", "build", "coverage", "data", "artifacts", ".husky", ".vscode", "__pycache__"}
 target = root / os.environ.get("OUTPUT_DIR", "static") / "source.zip"
 target.parent.mkdir(exist_ok=True)
 with ZipFile(target, "w", ZIP_DEFLATED) as archive:
