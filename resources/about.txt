@@ -1,0 +1,31 @@
+FrontWars - eigenständige Community-Instanz
+=========================================
+
+Keine offizielle FrontWars-Instanz. Kein Nachbau der aktuellen proprietären Version.
+Basis: https://github.com/Elitis/FrontWars
+Branch: main, historischer Stand vom 30. September 2025
+Commit: 3884ac688c243e75a1da4a7932ca75e9fc368bcf
+
+Die neueren öffentlichen Clients vom Oktober/November 2025 passen nicht zur
+mitgelieferten gemeinsamen Engine. Diese Instanz verwendet deshalb einen
+zusammenhängenden älteren Stand und dessen unveränderte Simulationsregeln.
+
+Änderungen: eigenständige Serverkonfiguration, Worker-Proxy am selben Ursprung,
+Gastzugang ohne offizielle Konten, lokales Replayarchiv, keine fremden Werbe-
+oder Analysedienste. Keine offizielle Rangliste, Käufe oder Kontenübertragung.
+Eigene Instanzen besitzen nur ihre eigenen tatsächlich verbundenen Spieler.
+
+Quellcode mit Lizenztexten und Dokumentation: /source.zip
+Versionsnachweis und Abweichungen: im Export unter docs/VERSION.md
+
+Copyright: WarFront.io Team, OpenFront.io Team/OpenFront LLC, FrontWars.io Team
+und Vexxus Arts Ltd sowie die jeweiligen Beitragenden.
+Lizenz: Client GPL-3.0; Server und gemeinsame Engine MIT, siehe LICENSE.
+Nichtkommerzielle Assets unter resources/non-commercial: siehe dortige Lizenz.
+Asset created by Evan Ray Pellegrini for OpenFront LLC – used under Creative
+Commons Non-Commercial License (CC NC) with Commercial Exemption in favor of
+OpenFront LLC.
+
+Elf nicht eindeutig zur öffentlichen Weiterverwendung freigegebene Ersatzgrafiken
+wurden auf ihre vorherigen öffentlich lizenzierten Fassungen zurückgesetzt.
+Proprietäre Musik aus neueren Fassungen wird nicht mitgeliefert.

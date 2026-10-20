@@ -1,0 +1,41 @@
+{
+  "browser-smoke": {
+    "checks": {
+      "two_players_in_same_lobby": true,
+      "both_players_expand": true,
+      "alliance_changes_simulation": true,
+      "donation_transfers_real_gold": true,
+      "reconnect_keeps_player": true,
+      "refresh_keeps_player": true,
+      "refresh_restores_territory_and_gold": true,
+      "identical_simulation_hashes": 37,
+      "last_matching_tick": 360
+    },
+    "errors": []
+  },
+  "singleplayer-smoke": {
+    "mode": "singleplayer",
+    "settings": {
+      "map": "Pangaea",
+      "bots": 0,
+      "disableNPCs": true,
+      "infiniteTroops": true,
+      "infiniteGold": true,
+      "instantBuild": true
+    },
+    "errors": [],
+    "transport_launched": true,
+    "end": {
+      "tick": 2482,
+      "tiles": 341591,
+      "troops": 204389366,
+      "gold": "238000",
+      "won": true,
+      "landed": true,
+      "outgoing": 1,
+      "boats": 0,
+      "title": "You Won!"
+    },
+    "local_result_saved": true
+  }
+}

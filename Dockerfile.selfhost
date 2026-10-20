@@ -1,0 +1,19 @@
+FROM node:24-bookworm-slim
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 make g++ libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev \
+    && rm -rf /var/lib/apt/lists/*
+ENV HUSKY=0
+COPY package.json package-lock.json ./
+RUN --mount=type=secret,id=proxyca \
+    if [ -f /run/secrets/proxyca ]; then NODE_EXTRA_CA_CERTS=/run/secrets/proxyca npm ci --no-audit --no-fund; \
+    else npm ci --no-audit --no-fund; fi
+COPY --chown=node:node . .
+ENV GIT_COMMIT=3884ac688c243e75a1da4a7932ca75e9fc368bcf-selfhost1
+RUN npm run build
+RUN mkdir -p data && chown node:node data
+USER node
+EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=5s --start-period=30s \
+  CMD node -e "fetch('http://127.0.0.1:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+CMD ["npm", "start"]

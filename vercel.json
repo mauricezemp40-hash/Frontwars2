@@ -1,0 +1,36 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "HUSKY=0 npm ci --no-audit --no-fund",
+  "buildCommand": "npm run build",
+  "outputDirectory": "static",
+  "rewrites": [
+    { "source": "/api/env", "destination": "/api/gateway?route=/api/env" },
+    {
+      "source": "/api/public_lobbies",
+      "destination": "/api/gateway?route=/api/public_lobbies"
+    },
+    {
+      "source": "/api/auth/cosmetics.json",
+      "destination": "/api/gateway?route=/api/auth/cosmetics.json"
+    },
+    {
+      "source": "/w0/api/:path*",
+      "destination": "/api/gateway?route=/w0/api/:path*"
+    },
+    {
+      "source": "/w1/api/:path*",
+      "destination": "/api/gateway?route=/w1/api/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }]
+    }
+  ]
+}

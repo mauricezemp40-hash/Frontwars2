@@ -1,0 +1,11 @@
+resources/non-commercial/images/buildings/cityAlt1.png
+resources/non-commercial/images/buildings/factoryAlt1.png
+resources/non-commercial/images/buildings/fortAlt2.png
+resources/non-commercial/images/buildings/fortAlt3.png
+resources/non-commercial/images/buildings/port1.png
+resources/non-commercial/images/buildings/silo1.png
+resources/non-commercial/images/buildings/silo4.png
+resources/non-commercial/images/svg/MissileSiloIconWhite.svg
+resources/non-commercial/images/svg/SamLauncherIconWhite.svg
+resources/non-commercial/svg/MissileSiloIconWhite.svg
+resources/non-commercial/svg/SamLauncherIconWhite.svg

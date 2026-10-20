@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <!-- Google tag (gtag.js) -->
+
+
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>FrontWars</title>
+    <link rel="manifest" href="../../resources/manifest.json" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../resources/images/Favicon.svg"
+    />
+
+    <!-- SEO -->
+    
+    <meta
+      name="description"
+      content="Conquer the world in this multiplayer battle royale! Expand your nation, eliminate opponents, and dominate the map in this fast-paced IO game."
+    />
+
+    <!-- Open Graph -->
+    
+    <meta property="og:title" content="FrontWars - Battle Royale" />
+    <meta
+      property="og:description"
+      content="Conquer the world in this multiplayer battle royale! Expand your nation, eliminate opponents, and dominate the map in this fast-paced IO game."
+    />
+    <meta
+      property="og:image"
+      content="../../resources/images/GameplayScreenshot.png"
+    />
+    <meta property="og:type" content="game" />
+
+    <!-- Critical CSS to prevent FOUC -->
+    <style>
+      .preload * {
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -ms-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important;
+      }
+
+      html {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      html.preload {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      /* Prevent vertical scrolling on main page */
+      html,
+      body {
+        overflow: hidden;
+      }
+
+      main {
+        height: 100%;
+      }
+
+      .bg-image {
+        content: "";
+        background-image: url("/images/EuropeBackground.webp");
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(4px);
+        z-index: -1;
+      }
+
+      .dark .bg-image {
+        filter: blur(4px) brightness(0.4) saturate(0.3) contrast(1.2);
+      }
+
+      /* display:none if child has class parent-hidden since we can't use shadow DOM in Lit due to Tailwind */
+      .component-hideable:has(> .parent-hidden) {
+        display: none;
+      }
+
+      /* Hide side banners on small screens - handled by JavaScript for scale-aware behavior */
+
+      /* Scale container based on screen height */
+      .scale-container {
+        transform-origin: top;
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
+
+    <!-- Immediate execution to prevent FOUC -->
+    <script>
+      document.documentElement.className = "preload";
+    </script>
+
+    <!-- Playwire ads -->
+    <script>
+      window.ramp = window.ramp || {};
+      window.ramp.que = window.ramp.que || [];
+      window.ramp.passiveMode = true;
+    </script>
+  </head>
+
+  <body
+    class="h-full select-none font-sans min-h-screen bg-opacity-0 bg-cover bg-center bg-fixed transition-opacity duration-300 ease-in-out flex flex-col"
+  >
+    <div class="bg-image"></div>
+
+    <gutter-ad-modal></gutter-ad-modal>
+
+    <!-- Main container with responsive padding -->
+    <main class="flex justify-center flex-grow">
+      <div
+        class="scale-container w-full flex justify-center items-center gap-4"
+      >
+        <!-- CrazyGames banners: left and right integrated in layout -->
+        <div
+          id="cg-banner-left"
+          class="ad"
+          style="width: 300px; height: 600px"
+        ></div>
+        <div class="container">
+          <header class="l-header">
+            <div class="l-header__content">
+              <svg
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 495.5 132.2"
+                xml:space="preserve"
+                fill="currentColor"
+                class="l-header__logo"
+              >
+                <defs>
+                  <linearGradient
+                    id="logo-gradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" style="stop-color: #2563eb" />
+                    <stop offset="100%" style="stop-color: #3b82f6" />
+                  </linearGradient>
+                </defs>
+
+                <g>
+                  <path
+                    d="M314.5,85c-3.7,0-7.2,0-10.8,0c0-8.8,0-17.4,0-26.2c-5.1,0-9.9,0-15,0c0,8.6,0,17,0,25.5c-3.7,0-7.1,0-10.8,0
+                    c0-19.3,0-38.5,0-57.8c-5.8,0-11.3,0-16.8,0c0,20.3,0,40.5,0,60.9c2.2,0,4.3,0,6.7,0c0,6,0,11.8,0,17.6c6.3,0,12.3,0,18.5,0
+                    c0-2,0-3.9,0-6c2.3,0,4.5,0,6.8,0c0-2.1,0-4.1,0-6c1.4,0,2.6,0,4.1,0c0,2.2,0,4.3,0,6.5c2.2,0,4.3,0,6.5,0c0,1.9,0,3.7,0,5.5
+                    c6.8,0,13.3,0,20,0c0-6,0-11.8,0-17.8c2.4,0,4.6,0,6.9,0c0-20.4,0-40.6,0-60.7c-5.4,0-10.7,0-16.1,0
+                    C314.5,46.1,314.5,65.6,314.5,85z"
+                  />
+                  <path
+                    d="M376.3,47.9c-11,0-21.8,0-32.7,0c0,3.8,0,7.5,0,11.5c7.9,0,15.6,0,23.5,0c0,3.3,0,6.3,0,9.4c-7.6,0-15.1,0-22.8,0
+                    c0,2,0,3.8,0,5.9c-2.2,0-4.3,0-6.4,0c0,8.4,0,16.6,0,25c2,0,3.9,0,6.1,0c0,1.9,0,3.7,0,5.4c7.2,0,14.1,0,21,0c0.1-1,0.2-2,0.3-2.9
+                    c1.4,0,2.6,0,3.9,0c0.1,1.1,0.1,2.1,0.2,3.2c4.5,0,8.9,0,13.3,0c0-17.2,0-34.3,0-51.6c-2.2,0-4.2,0-6.4,0
+                    C376.3,51.7,376.3,49.8,376.3,47.9z M367.4,92.7c-4.6,0-9.2,0-13.9,0c0-4.6,0-9.2,0-13.9c4.6,0,9.2,0,13.9,0
+                    C367.4,83.5,367.4,88.1,367.4,92.7z"
+                  />
+                  <path
+                    d="M153.6,47.8c-10.2,0-20.1,0-30.2,0c0,2.2,0,4.2,0,6.3c-2.5,0-4.8,0-7.3,0c0,15,0,29.7,0,44.6c2.5,0,4.8,0,7.4,0
+                    c0,2.2,0,4.3,0,6.3c10,0,19.8,0,29.7,0c0-2.2,0-4.2,0-6.4c2.7,0,5.3,0,7.8,0c0-14.9,0-29.6,0-44.5c-2.5,0-4.8,0-7.4,0
+                    C153.6,51.9,153.6,49.9,153.6,47.8z M145.5,93.2c-4.6,0-9.1,0-13.8,0c0-11,0-22,0-33.3c4.6,0,9.1,0,13.8,0
+                    C145.5,71,145.5,82,145.5,93.2z"
+                  />
+                  <path
+                    d="M206.3,47.9c-6.2,0-12.2,0-18.3,0c0,1.5,0,2.8,0,4.3c-1.4,0-2.6,0-4,0c0-1.4,0-2.8,0-4.2c-5.3,0-10.4,0-15.6,0
+                    c0,19.2,0,38.2,0,57.3c5.1,0,10.2,0,15.4,0c0-14.8,0-29.4,0-43.9c4.8,0,9.4,0,14.1,0c0,14.7,0,29.2,0,43.8c4.9,0,9.7,0,14.6,0
+                    c0-17.2,0-34.2,0-51.5c-2.2,0-4.2,0-6.3,0C206.3,51.6,206.3,49.8,206.3,47.9z"
+                  />
+                  <path
+                    d="M30.1,105c5.8,0,11.4,0,17.1,0c0-11.6,0-23,0-34.6c6.2,0,12.2,0,18.1,0c0-4.2,0-8.2,0-12.3c-6.1,0-12.1,0-18.1,0
+                    c0-6.4,0-12.6,0-18.9c8.7,0,17.2,0,25.7,0c0-4.3,0-8.4,0-12.7c-14.4,0-28.6,0-42.9,0C30.1,52.8,30.1,78.9,30.1,105z"
+                  />
+                  <path
+                    d="M467.3,47.8c-9.2,0-18,0-27.2,0c0,2.2,0,4.2,0,6.4c-2.8,0-5.3,0-7.9,0c0,6.1,0,11.9,0,18c2.5,0,4.8,0,7.3,0
+                    c0,1.5,0,2.8,0,4.3c3.2,0,6.2,0,9.5,0c0,1.9,0,3.6,0,5.6c3.3,0,6.3,0,9.2,0c0,3.7,0,7.2,0,10.8c-4.1,0-8,0-12.2,0
+                    c0-1.9,0-3.6,0-5.4c-5.2,0-10.1,0-15.1,0c0,3.9,0,7.7,0,11.7c2.6,0,5,0,7.7,0c0,2.2,0,4.1,0,6c9.5,0,18.7,0,28.1,0
+                    c0-1.9,0-3.6,0-5.7c2.4,0,4.5,0,6.5,0c0-7.1,0-14,0-21.2c-2.5,0-4.9,0-7.5,0c0-2.1,0-4,0-6.1c-3.1,0-6,0-9.3,0c0-1.9,0-3.5,0-5.2
+                    c-3.3-0.1-6.3-0.3-9.4-0.4c0-2.4,0-4.6,0-6.8c4.3,0,8.5,0,13,0c0,1.7,0,3.3,0,5c5.3,0,10.4,0,15.5,0c0-3.3,0-6.4,0-9.7
+                    c-2.8,0-5.5,0-8.4,0C467.3,52.4,467.3,50.1,467.3,47.8z"
+                  />
+                  <path
+                    d="M242.9,59.4c3.8,0,7.3,0,11,0c0-4,0-7.7,0-11.7c-3.7,0-7.4,0-11.3,0c0-4.9,0-9.5,0-14.2c-5.2,0-10.1,0-15.2,0
+                    c0,4.8,0,9.4,0,14.3c-3.3,0-6.4,0-9.4,0c0,3.9,0,7.7,0,11.6c3.1,0,6,0,9.3,0c0,13.6,0,26.8,0,40.2c2.1,0,3.9,0,6,0
+                    c0,1.9,0,3.7,0,5.5c7.1,0,14,0,20.8,0c0-3.9,0-7.7,0-11.7c-3.8,0-7.6,0-11.2,0C242.9,81.9,242.9,70.7,242.9,59.4z"
+                  />
+                  <path
+                    d="M409.5,52.8c-1.2,0-2.2,0-3.5,0c0-1.8,0-3.4,0-5.1c-4.8,0-9.3,0-13.9,0c0,19.2,0,38.2,0,57.5c5,0,9.9,0,15.2,0
+                    c0-14.6,0-29,0-43.6c6.4,0,12.7,0,18.9,0c0-4.7,0-9.2,0-13.8c-5.5,0-10.9,0-16.5,0C409.7,49.6,409.6,51.2,409.5,52.8z"
+                  />
+                  <path
+                    d="M94.1,52.8c-1.3,0-2.4,0-3.5,0c0-1.8,0-3.4,0-5.1c-4.6,0-9,0-13.7,0c0,19.3,0,38.3,0,57.4c5,0,9.9,0,15.1,0
+                    c0-14.4,0-28.8,0-43.2c6.2,0,12.1,0,18.1,0c0-4.8,0-9.4,0-14c-5.4,0-10.6,0-16,0C94.1,49.7,94.1,51.3,94.1,52.8z"
+                  />
+                  <path
+                    d="M487,14.8c0-2.2,0-4.4,0-6.7c-3.1,0-5.9,0-9,0c0-2.9,0-5.5,0-8.1C325.6,0,173.6,0,21.3,0c0,2.7,0,5.3,0,8.1
+                    c-3.1,0-5.9,0-9.1,0c0,2.3,0,4.5,0,6.6c-1.4,0.1-2.6,0.1-3.7,0.2v-0.2H0v102.6h8.5c1.2-0.1,2.4-0.1,3.9-0.2c0,2.5,0,4.8,0,7.2
+                    c3.1,0,5.9,0,8.9,0c0,2.6,0,5.1,0,7.8c152.4,0,304.5,0,456.8,0c0-2.8,0-5.3,0-7.8c2.3,0,4.4-0.1,6.5,0c2,0.1,2.6-0.7,2.6-2.2
+                    c0-1.5,0-3.1,0-4.7c1.4,0,2.6,0,3.8,0h4.6V14.8H487z M486.8,110.2c-2.9,0-5.6,0-8.5,0c0,2.4,0,4.7,0,7.2c-2.6,0-5,0-7.4,0
+                    c-0.3,2.5-0.5,4.8-0.7,7.3c-147,0-294,0-441.2,0c0-2.2,0-4.4,0-6.8c-2.6-0.2-5-0.3-7.6-0.5c0-2.2,0-4.5,0-6.8c-2.9,0-5.7,0-8.6,0
+                    c0-29.7,0-59.3,0-89.1c2.7,0.1,5.2,0.3,8.2,0.4c0.1-2.3,0.3-4.5,0.4-6.8c2.4,0,4.7,0,7.3,0c0-2.5,0-4.8,0-7.4
+                    c147.2,0,294.2,0,441.3,0c0.2,2.4,0.3,5,0.5,7.7c2.7,0,5,0,7.6,0c0,2.1,0,4.1,0,6.2c3,0,5.8,0,8.6,0
+                    C486.8,51.1,486.8,80.5,486.8,110.2z"
+                  />
+                </g>
+              </svg>
+
+              <!-- <div id="game-version" class="l-header__highlightText text-center">
+                Loading version...
+              </div> -->
+            </div>
+          </header>
+
+          <o-button
+            id="login-discord"
+            title="Initializing..."
+            disable="true"
+            block
+          ></o-button>
+
+          <o-button
+            id="logout-discord"
+            title="Log out"
+            translationKey="main.log_out"
+            visible="false"
+            block
+          ></o-button>
+
+          <div class="container__row">
+            <flag-input class="w-[20%] md:w-[15%]"></flag-input>
+            <territory-patterns-modal class="w-[20%] md:w-[15%]">
+              <button
+                id="territory-patterns-input-preview-button"
+                class="w-full border p-[4px] rounded-lg flex cursor-pointer border-black/30 dark:border-gray-300/60 bg-white/70 dark:bg-[rgba(55,65,81,0.7)] justify-center"
+                title="Pick a pattern!"
+              ></button>
+            </territory-patterns-modal>
+            <username-input class="relative w-full"></username-input>
+            <news-button
+              class="w-[20%] md:w-[15%] component-hideable"
+            ></news-button>
+          </div>
+          <div>
+            <public-lobby class="block"></public-lobby>
+          </div>
+          <div class="container__row container__row--equal">
+            <o-button
+              id="host-lobby-button"
+              title="Create Lobby"
+              translationKey="main.create_lobby"
+              block
+              secondary
+            ></o-button>
+            <o-button
+              id="join-private-lobby-button"
+              title="Join Lobby"
+              translationKey="main.join_lobby"
+              block
+              secondary
+            ></o-button>
+            <!-- <o-button
+            id="chat-button"
+            title="Chat Test"
+            block
+            secondary
+          ></o-button> -->
+          </div>
+
+          <o-button
+            id="single-player"
+            title="Single Player"
+            translationKey="main.single_player"
+            block
+          ></o-button>
+
+          <o-button
+            id="help-button"
+            title="Instructions"
+            translationKey="main.instructions"
+            block
+            secondary
+          ></o-button>
+          <div class="container__row">
+            <lang-selector class="w-full"></lang-selector>
+          </div>
+          <!-- <div
+            id="cg-banner-bottom"
+            class="ad w-full mt-4"
+            style="height: 90px"
+          ></div> -->
+        </div>
+        <div
+          id="cg-banner-right"
+          class="ad"
+          style="width: 300px; height: 600px"
+        ></div>
+      </div>
+    </main>
+
+    <!-- User Setting -->
+    <button
+      id="settings-button"
+      title="Settings"
+      class="fixed bottom-4 right-4 z-50 rounded-full p-2 shadow-lg transition-colors duration-300 flex items-center justify-center"
+      style="width: 4.5rem; height: 4.5rem; background-color: #0075ff"
+    >
+      <img
+        src="../../resources/images/SettingIconWhite.svg"
+        alt="Settings"
+        style="width: 72px; height: 72px"
+      />
+    </button>
+
+    <!-- Game components -->
+    <div id="customMenu" class="mt-4 sm:mt-6 lg:mt-8">
+      <ul></ul>
+    </div>
+    <div id="app"></div>
+    <div id="radialMenu" class="radial-menu"></div>
+    <div class="flex gap-2 fixed right-[10px] top-[10px] z-50 flex-col">
+      <options-menu></options-menu>
+      <player-info-overlay></player-info-overlay>
+    </div>
+    <div
+      class="fixed bottom-[30px] sm:bottom-auto sm:top-[20px] z-50 mx-auto max-w-max inset-x-0 items-center"
+    >
+      <heads-up-message></heads-up-message>
+    </div>
+
+    <div
+      class="bottom-0 w-full flex-col-reverse sm:flex-row z-50 md:w-[320px]"
+      style="position: fixed; pointer-events: none"
+    >
+      <div
+        class="w-full md:w-2/3 md:fixed sm:right-0 md:bottom-0 md:flex flex-col items-end"
+        style="pointer-events: none"
+      >
+        <chat-display></chat-display>
+        <events-display></events-display>
+      </div>
+      <div style="pointer-events: auto">
+        <control-panel></control-panel>
+      </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer class="l-footer">
+      <div class="l-footer__content">
+        <div class="l-footer__col">
+          <a
+            href="/about.txt"
+            class="t-link"
+            target="_blank"
+          >
+            About
+          </a>
+          <a
+            href="https://www.reddit.com/r/FrontWars/"
+            class="t-link"
+            target="_blank"
+          >
+            Reddit
+          </a>
+          <a
+            target="_blank"
+            href="https://discord.gg/cuF4d6UMG3"
+            class="t-link"
+          >
+            <span data-i18n="main.join_discord"> Join the Discord! </span>
+          </a>
+        </div>
+        <div class="l-footer__col t-text-white">
+          <div class="t-link inline-flex items-center space-x-2">
+            2025 FrontWars · eigene Instanz (30.09.2025) · <a href="/source.zip">Quellcode</a>
+          </div>
+          <a
+            href="/privacy-policy.html"
+            data-i18n="main.privacy_policy"
+            class="t-link"
+            target="_blank"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="/terms-of-service.html"
+            data-i18n="main.terms_of_service"
+            class="t-link"
+            target="_blank"
+          >
+            Terms of Service
+          </a>
+          <p style="text-align: center"></p>
+        </div>
+      </div>
+    </footer>
+    <!-- Game modals and overlays -->
+    <single-player-modal></single-player-modal>
+    <host-lobby-modal></host-lobby-modal>
+    <join-private-lobby-modal></join-private-lobby-modal>
+    <emoji-table></emoji-table>
+    <build-menu></build-menu>
+    <win-modal></win-modal>
+    <game-starting-modal></game-starting-modal>
+    <game-top-bar></game-top-bar>
+    <unit-display></unit-display>
+    <div class="flex fixed top-[20px] right-[20px] z-[1000] items-start gap-2">
+      <replay-panel></replay-panel>
+      <game-right-sidebar></game-right-sidebar>
+    </div>
+    <settings-modal></settings-modal>
+    <player-panel></player-panel>
+    <help-modal></help-modal>
+    <dark-mode-button></dark-mode-button>
+    <alert-frame></alert-frame>
+    <chat-modal></chat-modal>
+    <user-setting></user-setting>
+    <multi-tab-modal></multi-tab-modal>
+    <news-modal></news-modal>
+    <game-left-sidebar></game-left-sidebar>
+    <spawn-ad></spawn-ad>
+    <flag-input-modal></flag-input-modal>
+    <fps-display></fps-display>
+    <language-modal></language-modal>
+
+    <!-- Scripts -->
+    <script>
+      // Remove preload class after everything is loaded
+      window.addEventListener("load", function () {
+        requestAnimationFrame(() => {
+          document.documentElement.classList.remove("preload");
+        });
+      });
+    </script>
+
+    <!-- Adaptive JS scaling for .scale-container -->
+    <script>
+      (function () {
+        function vh(v) {
+          var h = Math.max(
+            document.documentElement.clientHeight,
+            window.innerHeight || 0,
+          );
+          return (v * h) / 100;
+        }
+
+        function vw(v) {
+          var w = Math.max(
+            document.documentElement.clientWidth,
+            window.innerWidth || 0,
+          );
+          return (v * w) / 100;
+        }
+
+        function gcd(a = window.innerWidth, b = window.innerHeight) {
+          return b == 0 ? a : gcd(b, a % b);
+        }
+
+        function computeScale() {
+          var height = Math.max(
+            document.documentElement.clientHeight,
+            window.innerHeight || 0,
+          );
+          var baseHeight = 892;
+          if (height >= baseHeight) return 1;
+          return Math.min(1, height / baseHeight);
+        }
+
+        var ticking = false;
+
+        function applyScale() {
+          var container = document.querySelector(".scale-container");
+          if (!container) return;
+          var scale = computeScale();
+          container.style.transform = "scale(" + scale + ")";
+          updateBannerVisibility(scale);
+        }
+
+        function updateBannerVisibility(scale) {
+          var leftBanner = document.getElementById("cg-banner-left");
+          var rightBanner = document.getElementById("cg-banner-right");
+
+          if (!leftBanner || !rightBanner) return;
+
+          var width =
+            Math.max(
+              document.documentElement.clientWidth,
+              window.innerWidth || 0,
+            ) / scale;
+
+          // Calculate scaled breakpoints
+          var leftBannerBreakpoint = 980 / scale;
+          var bothBannersBreakpoint = 720 / scale;
+
+          if (width <= bothBannersBreakpoint) {
+            // Hide both banners
+            leftBanner.style.display = "none";
+            rightBanner.style.display = "none";
+          } else if (width <= leftBannerBreakpoint) {
+            // Hide only left banner
+            leftBanner.style.display = "none";
+            rightBanner.style.display = "block";
+          } else {
+            // Show both banners
+            leftBanner.style.display = "block";
+            rightBanner.style.display = "block";
+          }
+        }
+
+        function onResize() {
+          requestAnimationFrame(function () {
+            applyScale();
+          });
+        }
+
+        window.addEventListener("resize", onResize);
+        window.addEventListener("DOMContentLoaded", applyScale);
+        // Fallback for late-mounted content
+        onResize();
+      })();
+    </script>
+
+    <!-- Playwire ads -->
+    
+  </body>
+</html>

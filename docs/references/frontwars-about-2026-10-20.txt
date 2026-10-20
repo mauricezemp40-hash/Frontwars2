@@ -1,0 +1,77 @@
+FrontWars - About
+
+FrontWars is a commercial game developed and maintained by VexxusArts Ltd. It is partially based on the MIT-licensed portions of the OpenFrontIO project created by OpenFront LLC.
+
+FrontWars does not include any GPL or AGPL code. All incorporated code originates only from OpenFrontIO commits that were entirely MIT-licensed.
+
+UPSTREAM CODE REFERENCE
+
+FrontWars includes modified portions of OpenFrontIO code taken exclusively from two fully MIT-licensed commits:
+
+Commit 9866dbb73ad0d3f430d373296a575de4ddfcd00d
+(All project files MIT-licensed)
+
+Commit 9d5c108b83937a30ab42de6b1dca5a64e577aaac
+(Everything was MIT-licensed except the client directory, and we did not use any client code from this commit.)
+
+Only MIT-licensed files from these commits were used.
+No GPL/AGPL client code or later relicensed code is included.
+
+CURRENT LICENSE (FRONTWARS)
+
+FrontWars is not currently open-source.
+However, we plan to release the project as open-source in the near future.
+
+All new code developed by VexxusArts Ltd is currently proprietary until the open-source release.
+
+LICENSES OF INCLUDED COMPONENTS
+
+MIT LICENSED CODE
+Portions of the original OpenFrontIO codebase that were MIT-licensed at the referenced commits are included under the terms of the MIT License.
+
+© 2024 WarFront.io Team
+© 2024 OpenFront.io Team
+© 2025 FrontWars.io Team
+
+Full MIT License text: https://opensource.org/licenses/MIT
+
+ASSETS
+
+FrontWars uses only:
+
+MIT-licensed assets from the referenced OpenFrontIO commits, and
+
+New original assets created by VexxusArts Ltd.
+
+All other OpenFrontIO assets — including non-commercial, GPL-affected, or proprietary ones — have been fully removed.
+
+All current assets in FrontWars are either MIT-licensed or fully proprietary to VexxusArts Ltd.
+
+ATTRIBUTION
+
+Original MIT-licensed authors: OpenFront LLC and contributors
+
+MIT-licensed upstream code: WarFront.io Team, OpenFront.io Team
+
+New code and modifications: VexxusArts Ltd
+
+New assets: VexxusArts Ltd
+
+NOTES
+
+FrontWars is not open-source, but will be open-sourced soon.
+
+Only MIT-licensed code and assets were used from OpenFrontIO.
+
+No AGPL, GPL, CC-BY-NC, or other restricted licenses remain.
+
+The current FrontWars source code is proprietary until its upcoming open-source release.
+
+CONTACT & LICENSE COMPLIANCE
+
+If you believe any licensing information is incomplete, incorrect, or if you have concerns about any included code or assets, please contact:
+
+frontwarsio@gmail.com
+
+We will review and resolve any issue as quickly as possible.
+VexxusArts Ltd is fully committed to respecting all open-source and asset licenses.
